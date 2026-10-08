@@ -18,6 +18,10 @@ public class Jogador {
         }
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public String getPontos(StatusJogador status) {
         return String.format(StyleCores.VERDE+ "Total de %s = %d",status,pontos.get(status));
     }

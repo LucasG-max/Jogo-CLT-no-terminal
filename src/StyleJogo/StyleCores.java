@@ -1,6 +1,8 @@
 package StyleJogo;
 
 public class StyleCores {
+    public static final String FALA_NARRADOR_CINZA = "\u001B[90m";
+    public static final String FALA_PERSONAGEM_P = "\u001B[1;96m";
     public static final String RESET   = "\u001B[0m";
     public static final String PRETO   = "\u001B[30m";
     public static final String VERMELHO = "\u001B[31m";
@@ -9,7 +11,7 @@ public class StyleCores {
     public static final String AZUL    = "\u001B[34m";
     public static final String ROXO    = "\u001B[35m";
     public static final String VERDE_ESCURO_REAL = "\u001B[38;5;22m";
-    public static  final String NEGRITO = "\\u001B[1m";
-    public static  final String SUBLINHADO = " \\u001B[4m";
+    public static  final String NEGRITO = "\u001B[1m";
+    public static  final String SUBLINHADO = " \u001B[4m";
 
 }
