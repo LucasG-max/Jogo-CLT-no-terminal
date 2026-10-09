@@ -1,17 +1,13 @@
-import Fases01.Fase01;
+import Fases01.Fase01Dialogos;
+import Fases01.Inicio;
 import Jogador.Jogador;
-import Jogador.StatusJogador;
-import StyleJogo.StyleCores;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Teste {
     public static void main(String[] args) {
         Jogador jogador1 = new Jogador("Lucas");
-        Fase01 fase01 = new  Fase01();
+        Inicio inicio = new Inicio();
         //jogador1.addPontosStatus(StatusJogador.values()[0],5);
-        fase01.apresentacao();
+       inicio.iniciarEscolhas();
 
 
 

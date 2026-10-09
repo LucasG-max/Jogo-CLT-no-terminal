@@ -3,8 +3,8 @@ package Fases01;
 import Jogador.Jogador;
 import StyleJogo.StyleCores;
 
-public class Fase01 {
-     StyleFrases styleFrases = new StyleFrases();
+public class Fase01Dialogos {
+     StyleCores.StyleFrases styleFrases = new StyleCores.StyleFrases();
      Jogador jogador = new Jogador("Lucas");
         public  void apresentacao(){
             styleFrases.fraseNarrador("\"O último sino tocou. Pela primeira vez, você não tem lição de casa para amanhã.\"\n" +
