@@ -1,5 +1,6 @@
 package Fases01;
 
+import Fases01.Jogos.Jogo21;
 import Jogador.Jogador;
 import StyleJogo.StyleCores;
 
@@ -75,6 +76,10 @@ public class Inicio {
                     System.out.print(StyleCores.PERGUNTA+"1 - 21 \n2 - Acerte o número ");
                     int opcao = input.nextInt();
                     if(opcao == 1){
+                        System.out.println();
+                        Jogo21 jogo = new Jogo21();
+                       jogo.Jogo21_Start();
+
                         break;
                     }else if(opcao == 2){
                         break;
@@ -130,7 +135,7 @@ public class Inicio {
 
 
     void main(){
-        prepararCurriculo();
+        iniciarEscolhas();
     }
 }
 
