@@ -14,9 +14,14 @@ public class Jogo21  extends Mao {
     static Mao jogo = new Jogo21();
 
 public void Jogo21_Start(){
-    System.out.println(StyleCores.FALA_NARRADOR_CINZA+" Jogo 21 " + StyleCores.RESET);
-    styleFrases.carregarJogos("...... \n");
-        continuarJogo(jogador, maoDamaquina, baralho);
+    styleFrases.carregarJogos("\t\t\t21\n");
+    styleFrases.carregarJogos("Iniciando...... \n");
+        jogar(jogador,maoDamaquina,baralho);
+
+}
+
+void main(){
+    Jogo21_Start();
 }
 
 }

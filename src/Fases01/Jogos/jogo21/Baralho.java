@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Baralho {
     private List<String> baralhoCompleto;
-    private Map<String, Integer> valores; // guarda nome → valor
+    private Map<String, Integer> valores;
     private Random aleatorio;
 
     public Baralho() {
@@ -21,7 +21,6 @@ public class Baralho {
         valores = new HashMap<>();
 
         String[] naipes = {"♥", "♦", "♠", "♣"};
-
 
         for (String n : naipes) {
             valores.put("A" + n, 11);
@@ -57,10 +56,11 @@ public class Baralho {
         return baralhoCompleto.remove(indice);
     }
 
-
     public int getValor(String nomeCarta) {
         return valores.get(nomeCarta);
     }
 
-
+    public void limpar() {
+        montarBaralho();
+    }
 }

@@ -1,6 +1,6 @@
 package Fases01;
 
-import Fases01.Jogos.acerteONumero.AdvinheNumeros;
+import Fases01.Jogos.acerteONumero.AdivinheNumeros;
 import Fases01.Jogos.jogo21.Jogo21;
 import Jogador.Jogador;
 import StyleJogo.StyleCores;
@@ -81,7 +81,7 @@ public class Inicio {
 
                         break;
                     }else if(opcao == 2){
-                        AdvinheNumeros advinhe = new AdvinheNumeros();
+                        AdivinheNumeros advinhe = new AdivinheNumeros();
                         advinhe.chuteJogador();
                         break;
                     }else{

@@ -4,13 +4,13 @@ import StyleJogo.StyleCores;
 
 import java.util.*;
 
-public class AdvinheNumeros {
+public class AdivinheNumeros {
     Scanner input = new Scanner(System.in);
     Random random = new Random();
    StyleCores.StyleFrases styleFrases = new StyleCores.StyleFrases();
     List<Integer> numeros;
 
-    public AdvinheNumeros(){
+    public AdivinheNumeros(){
         numeros = new ArrayList<Integer>();
     }
 
