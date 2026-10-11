@@ -1,4 +1,4 @@
-package Fases01.Jogos;
+package Fases01.Jogos.jogo21;
 
 import java.util.ArrayList;
 import java.util.HashMap;

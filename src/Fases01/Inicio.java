@@ -1,12 +1,11 @@
 package Fases01;
 
-import Fases01.Jogos.Jogo21;
+import Fases01.Jogos.acerteONumero.AdvinheNumeros;
+import Fases01.Jogos.jogo21.Jogo21;
 import Jogador.Jogador;
 import StyleJogo.StyleCores;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Inicio {
@@ -73,7 +72,7 @@ public class Inicio {
                     "\n ");
             while(true){
                 try {
-                    System.out.print(StyleCores.PERGUNTA+"1 - 21 \n2 - Acerte o número ");
+                    System.out.print(StyleCores.PERGUNTA+"1 - 21 \n2 - Acerte o número " + StyleCores.RESET);
                     int opcao = input.nextInt();
                     if(opcao == 1){
                         System.out.println();
@@ -82,6 +81,8 @@ public class Inicio {
 
                         break;
                     }else if(opcao == 2){
+                        AdvinheNumeros advinhe = new AdvinheNumeros();
+                        advinhe.chuteJogador();
                         break;
                     }else{
                         System.out.println(StyleCores.AMARELO + "\n" + "Essa opção não esta dentro da lista por favor digite um número da lista "  + "\n");

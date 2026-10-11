@@ -1,4 +1,4 @@
-package Fases01.Jogos;
+package Fases01.Jogos.jogo21;
 
 import StyleJogo.StyleCores;
 
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static Fases01.Jogos.Jogo21.jogo;
-import static Fases01.Jogos.Jogo21.maoDamaquina;
+import static Fases01.Jogos.jogo21.Jogo21.jogo;
+import static Fases01.Jogos.jogo21.Jogo21.maoDamaquina;
 
 public class Mao {
     static Maquina maquina = new Maquina();
@@ -160,14 +160,28 @@ public class Mao {
         reiniciarJogo(jogador, maquina, baralho);
     }
 
+    public void continuarJogo(Mao jogador, Mao maoDamaquina, Baralho baralho) {
+        while(true){
+            System.out.print(StyleCores.PERGUNTA + "Você ainda quer jogar ?");
+            char resposta = input.next().charAt(0);
 
-    public void reiniciarJogo(Mao jogador, Mao maoDamaquina, Baralho baralho) {
+            if(resposta =='s' || resposta =='S'){
+               reiniciarJogo(jogador,maoDamaquina,baralho);
+            }else if(resposta =='n' || resposta =='N'){
+                System.out.println(StyleCores.PERGUNTA + "Fim de jogo" +
+                        "\n");
+                break;
+            }
+
+        }
+    }
+
+
+    public void reiniciarJogo(Mao jogador, Mao maoDamaquina, Baralho baralho) {;
         System.out.println(StyleCores.AMARELO + "Reiniciando jogo...\n" + StyleCores.RESET);
-
 
         jogador.limpar();
         maoDamaquina.limpar();
-
 
         baralho = new Baralho();
 
