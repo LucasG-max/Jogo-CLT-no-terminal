@@ -78,11 +78,11 @@ public class Inicio {
                         System.out.println();
                         Jogo21 jogo = new Jogo21();
                        jogo.Jogo21_Start();
-
                         break;
                     }else if(opcao == 2){
                         AdivinheNumeros advinhe = new AdivinheNumeros();
                         advinhe.chuteJogador();
+
                         break;
                     }else{
                         System.out.println(StyleCores.AMARELO + "\n" + "Essa opção não esta dentro da lista por favor digite um número da lista "  + "\n");
@@ -132,6 +132,7 @@ public class Inicio {
         while (texto.length() < tamanho) texto += " ";
         return texto.substring(0, tamanho);
     }
+
 
 
 

@@ -100,5 +100,9 @@ public class Fase01Dialogos {
                     "\n ");
         }
 
+        //Dialogo depois dos jogos ou fazer curriculo
+
+
+
 
 }
