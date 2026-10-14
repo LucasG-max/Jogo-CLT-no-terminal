@@ -134,7 +134,20 @@ public class Inicio {
     }
 
 
+public void ComprasMercado(){
+        styleFrases.fraseNarrador("Narrador:" +
+                "\nSua mãe deixou um dinheiro e pediu para voce comprar algumas coisa no mercado " +
+                "\nEla disse que você pode comprar alguma coisa para comer" +
+                "\nVocê vai a pé ou de bicicleta ? ");
+                char opcao = input.next().charAt(0);
 
+                if(opcao == 'P' ||  opcao == 'p' ||  opcao == 'A' || opcao== 'a'){
+                    styleFrases.fraseNarrador("Você prefere ir a pé para aproveitar a tarde ");
+                }if(opcao == 'B' ||  opcao == 'b'){
+                    styleFrases.fraseNarrador("Você prefere ir de bicicleta para economizar o tempo");
+    }
+
+}
 
     void main(){
         iniciarEscolhas();

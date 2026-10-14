@@ -7,8 +7,8 @@ public enum StatusJogador {
     ALEGRIA(100,"Pontos de ALEGRIA são necessários para interação do Jogador"),
     CARISMA(100,"Pontos de CARISMA são necessários para Status do Jogador"),
     CANSACO(0,"Pontos de CANSAÇO influenciam no gasto de pontos de ENERGIA"),
-    FOME(0,"Pontos de FOME influenciam no gasto de pontos de ENERGIA,ALEGRIA e aumenta os pontos de CANSAÇO"),
-    SEDE(0,"Pontos de SEDE influenciam no gasto de pontos de ENERGIA"),
+    FOME(30,"Pontos de FOME influenciam no gasto de pontos de ENERGIA,ALEGRIA e aumenta os pontos de CANSAÇO"),
+    SEDE(20,"Pontos de SEDE influenciam no gasto de pontos de ENERGIA"),
     PORTE_FISICO(80,"Pontos de PORTE FÍSICO influenciam no gasto de pontos de ENERGIA e no ganho dos pontos de FOME e CANSAÇO"),;
 
 

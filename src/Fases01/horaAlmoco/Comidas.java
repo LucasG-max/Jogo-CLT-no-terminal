@@ -1,5 +1,7 @@
 package Fases01.horaAlmoco;
 
+import Jogador.Jogador;
+import Jogador.StatusJogador;
 import StyleJogo.StyleCores;
 
 import java.util.*;
@@ -9,6 +11,7 @@ public class Comidas {
     List<String> carnes;
     List<String> bebidas;
     List<String> prato;
+    Jogador jogador = new Jogador("Lucas");
     Scanner input = new Scanner(System.in);
         StyleCores.StyleFrases styleFrases = new StyleCores.StyleFrases();
     public Comidas(){
@@ -32,20 +35,23 @@ public class Comidas {
 
 
     public void cardapioAlmoço(List<String> comidas){
+        System.out.println(StyleCores.AMARELO);
         int contador = 1;
         for(String comida : comidas){
             System.out.println(contador + " - Comida: " +  comida);
             contador++;
         }
+        System.out.println(StyleCores.RESET);
     }
 
     public void comidasPrato(List<String> comidas) {
+        System.out.println(StyleCores.AMARELO);
        while(true){
            int porComida;
            try {
-               System.out.println("Opções ");
+               styleFrases.frasesNpcs("Opções ");
                cardapioAlmoço(comidas);
-               System.out.print("Adicione a comida ao seu prato ");
+               styleFrases.frasesNpcs("Adicione a comida ao seu prato ");
                while (true) {
                     porComida = input.nextInt() -1;
                    for(int i = 0; i < comidas.size(); i++){
@@ -57,11 +63,11 @@ public class Comidas {
                        }
                    }
                    if(comidas.isEmpty()){
-                       System.out.println("As opções acabaram");
+                       styleFrases.frasesNpcs("As opções acabaram");
                        break;
                    }
 
-                   System.out.print("deseja finalizar prato ");
+                   styleFrases.frasesNpcs("deseja finalizar prato ");
                    char resposta = input.next().charAt(0);
                    if (resposta == 's' ||  resposta == 'S') {
                        System.out.println("\n");
@@ -81,19 +87,20 @@ public class Comidas {
            }
         break;
        }
+
     }
 
 
     public void comidasCarne(List<String> comidas) {
         while (true){
             try {
-                System.out.println("Opções ");
+                styleFrases.frasesNpcs("Opções ");
                 cardapioAlmoço(comidas);
-                System.out.print("Adicione o tipo de carne ao seu prato ");
+                styleFrases.frasesNpcs("Adicione o tipo de carne ao seu prato ");
                 while (true) {
                     int porComida = input.nextInt() -1;
                     if(comidas.isEmpty()){
-                        System.out.println("As opções acabaram");
+                        styleFrases.frasesNpcs("As opções acabaram");
                         break;
                     }
                     for(int i = 0; i < comidas.size(); i++){
@@ -108,11 +115,11 @@ public class Comidas {
 
                     }
                     if(comidas.isEmpty()){
-                        System.out.println("As opções acabaram");
+                        styleFrases.frasesNpcs("As opções acabaram");
                         break;
                     }
 
-                    System.out.print("deseja finalizar prato ");
+                    styleFrases.frasesNpcs("deseja finalizar prato ");
                     char resposta = input.next().charAt(0);
                     if (resposta == 's' ||  resposta == 'S') {
                         System.out.println("\n");
@@ -137,9 +144,9 @@ public class Comidas {
     public void comidasBebidas(List<String> comidas) {
         while (true) {
             try {
-                System.out.println("Opções ");
+                styleFrases.frasesNpcs("Opções ");
                 cardapioAlmoço(comidas);
-                System.out.print("Escolha o que você vai beber: ");
+                styleFrases.frasesNpcs("Escolha o que você vai beber: ");
 
                 int escolha = input.nextInt() - 1;
 
@@ -161,7 +168,7 @@ public class Comidas {
     }
 
     public void comidasDoPrato(List<String> comidas) {
-        System.out.println("Seu prato: ");
+        styleFrases.frasesNpcs("Seu prato: ");
         for (String comida : comidas) {
             System.out.println(comida);
         }
@@ -169,20 +176,45 @@ public class Comidas {
 
     public void comer(List<String> comidas) {
         for (String comida : comidas) {
-            System.out.println("Voce esta consumindo " + comida);
+          styleFrases.fraseNarrador("Voce esta consumindo " + comida);
         styleFrases.carregarJogos("\".........\"");
             System.out.println();
         }
-        System.out.println("Você almoçou e agora vai dormir um pouco");
+        styleFrases.fraseNarrador("\n" +
+                "Você almoçou e agora vai dormir um pouco");
+            styleFrases.fraseNarrador("Lembrete comidas adicionam e subtraem em seus pontos de Status");
+        addPontosAlmoco(comidas);
 
+    }
+
+    public void addPontosAlmoco(List<String> comidas){
+
+        for (String comida : comidas) {
+            if (comidas.contains("Macarrao")){
+                jogador.subtrairPontosStatus(StatusJogador.PORTE_FISICO,2);
+                jogador.subtrairPontosStatus(StatusJogador.FOME,1);
+            }
+
+            if (comidas.contains("Batata Frita")){
+                jogador.subtrairPontosStatus(StatusJogador.PORTE_FISICO,5);
+                jogador.subtrairPontosStatus(StatusJogador.FOME,1);
+            }
+            if (comidas.contains("Salada")){
+                jogador.addPontosStatus(StatusJogador.PORTE_FISICO,1);
+                jogador.addPontosStatus(StatusJogador.FOME,1);
+            }
+            if (comidas.contains("Coca cola")){
+                jogador.subtrairPontosStatus(StatusJogador.PORTE_FISICO,3);
+                jogador.addPontosStatus(StatusJogador.FOME,1);
+                jogador.subtrairPontosStatus(StatusJogador.SEDE,2);
+            }
+        }
     }
 
     void main(){
         comidasPrato(comidas);
-        comidasCarne(carnes);
-       comidasBebidas(bebidas);
+        addPontosAlmoco(prato);
 
-       comer(prato);
 
     }
 }
