@@ -4,11 +4,11 @@ import Jogador.Jogador;
 import Jogador.StatusJogador;
 import StyleJogo.StyleCores;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class EventoIrPe {
-
+    Map<Integer,String> carrinho = new HashMap<>();
+    List<String> produtos = new ArrayList<>();
     Jogador  jogador = new Jogador("Lucas");
     StyleCores.StyleFrases styleFrases = new StyleCores.StyleFrases();
     static Scanner input = new Scanner(System.in);
